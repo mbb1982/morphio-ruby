@@ -17,7 +17,10 @@ class Morphio
 		path = "/#{@scraper}/data.json?key=#{@api_key}&query=#{sql}"
 
 
-		response =  request.get(URI.escape(path))
-		JSON::parse(response.body)
+		response = request.get(URI.escape(path))
+		JSON::parse(response.body.encode('UTF-8'))
 	end
+
+
+
 end
